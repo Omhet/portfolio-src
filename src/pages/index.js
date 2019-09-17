@@ -1,15 +1,15 @@
 import React from "react"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from "../components/Hero"
 
 class BlogIndex extends React.Component {
   render() {
     return (
       <Layout>
         <SEO title="Vladimir Ivanov" />
-        <Bio />
+        <Hero />
       </Layout>
     )
   }
