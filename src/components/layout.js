@@ -1,15 +1,25 @@
 import React from "react"
+import { injectStyle } from "../utils/injectStyle"
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props
+    const { children, classes } = this.props
+
+    console.log({ classes })
+
 
     return (
-      <div>
+      <div className={classes.main}>
         <main>{children}</main>
       </div>
     )
   }
 }
 
-export default Layout
+const style = ({ colors: { back } }) => ({
+  main: {
+    backgroundColor: back.primary
+  },
+})
+
+export default injectStyle(style)(Layout)

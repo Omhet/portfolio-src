@@ -1,4 +1,5 @@
 import React from "react"
+import ThemeProvider from "cxs/ThemeProvider"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,17 +9,21 @@ import Articles from "../components/Articles"
 import Projects from "../components/Projects"
 import Contact from "../components/Contact"
 
+import basicTheme from "../themes/basic"
+
 class BlogIndex extends React.Component {
   render() {
     return (
-      <Layout>
-        <SEO title="Vladimir Ivanov" />
-        <Hero />
-        <About />
-        <Articles />
-        <Projects />
-        <Contact />
-      </Layout>
+      <ThemeProvider theme={basicTheme}>
+        <Layout>
+          <SEO title="Vladimir Ivanov" />
+          <Hero />
+          <About />
+          <Articles />
+          <Projects />
+          <Contact />
+        </Layout>
+      </ThemeProvider>
     )
   }
 }
