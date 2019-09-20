@@ -2,12 +2,9 @@ import React from "react"
 import { injectStyle } from "../utils/injectStyle"
 
 class Layout extends React.Component {
+
   render() {
     const { children, classes } = this.props
-
-    console.log({ classes })
-
-
     return (
       <div className={classes.main}>
         <main>{children}</main>
@@ -16,9 +13,10 @@ class Layout extends React.Component {
   }
 }
 
-const style = ({ colors: { back } }) => ({
+const style = ({ colors: { back, text } }) => ({
   main: {
-    backgroundColor: back.primary
+    backgroundColor: back.primary,
+    color: text.primary
   },
 })
 

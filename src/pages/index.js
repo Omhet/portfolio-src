@@ -1,5 +1,4 @@
 import React from "react"
-import ThemeProvider from "cxs/ThemeProvider"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,11 +9,12 @@ import Projects from "../components/Projects"
 import Contact from "../components/Contact"
 
 import basicTheme from "../themes/basic"
+import { ThemeContext } from "../themes/themeContext"
 
-class BlogIndex extends React.Component {
+class PortfolioIndex extends React.Component {
   render() {
     return (
-      <ThemeProvider theme={basicTheme}>
+      <ThemeContext.Provider value={basicTheme}>
         <Layout>
           <SEO title="Vladimir Ivanov" />
           <Hero />
@@ -23,9 +23,10 @@ class BlogIndex extends React.Component {
           <Projects />
           <Contact />
         </Layout>
-      </ThemeProvider>
+      </ThemeContext.Provider>
     )
   }
 }
 
-export default BlogIndex
+
+export default PortfolioIndex
