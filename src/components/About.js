@@ -2,10 +2,10 @@ import React from "react"
 
 const About = () => {
     return (
-        <div
+        <section
         >
            I'm fresh, fresh, exciting!!!
-        </div>
+        </section>
     )
 }
 

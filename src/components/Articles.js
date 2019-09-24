@@ -2,10 +2,10 @@ import React from "react"
 
 const Articles = () => {
     return (
-        <div
+        <section
         >
            My best articles
-        </div>
+        </section>
     )
 }
 

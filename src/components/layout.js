@@ -6,18 +6,33 @@ class Layout extends React.Component {
   render() {
     const { children, classes } = this.props
     return (
-      <div className={classes.main}>
-        <main>{children}</main>
+      <div className={classes.container}>
+        <main className={classes.content}>
+          {children}
+        </main>
       </div>
     )
   }
 }
 
 const style = ({ colors: { back, text } }) => ({
-  main: {
+  container: {
     backgroundColor: back.primary,
-    color: text.primary
+    color: text.primary,
   },
+  content: {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '1200px',
+    margin: '0 auto',
+    '& > *': {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }
+  }
 })
 
 export default injectStyle(style)(Layout)

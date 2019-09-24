@@ -1,8 +1,9 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
+import { injectStyle } from "../utils/injectStyle"
 
-const Hero = () => {
+const Hero = ({ classes }) => {
     const data = useStaticQuery(graphql`
     query HeroQuery {
       avatar: file(absolutePath: { regex: "/me.jpg/" }) {
@@ -22,14 +23,19 @@ const Hero = () => {
 
     const { author } = data.site.siteMetadata
     return (
-        <div
-        >
+        <section className={classes.container}>
             <Image
                 fluid={data.avatar.childImageSharp.fluid}
                 alt={author}
             />
-        </div>
+        </section>
     )
 }
 
-export default Hero
+const style = () => ({
+  container: {
+    display: 'block',
+  }
+})
+
+export default injectStyle(style)(Hero)
