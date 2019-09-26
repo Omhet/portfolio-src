@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/portfolio-src",
   siteMetadata: {
     title: `Vladimir Ivanov`,
     author: `Kyle Mathews`,
