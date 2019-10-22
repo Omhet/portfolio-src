@@ -7,15 +7,22 @@ import { random } from "../utils/visual/helpers"
 const Visual = ({ classes }) => {
   const containerRef = React.createRef()
 
-  useEffect(() => {
-    startVisual(containerRef)
-  }, [containerRef])
+  // useEffect(() => {
+  //   startVisual(containerRef)
+  // }, [containerRef])
 
-  return <div className={classes.container} ref={containerRef} />
+  return (
+    <div className={classes.container} ref={containerRef}>
+      <h1 className={classes.logo}>
+        <span>VLADIMIR IVANOV</span> <span>/</span>{" "}
+        <span className={classes.title}>web dev</span>
+      </h1>
+    </div>
+  )
 }
 
 const startVisual = containerRef => {
-  const MAX_PARTICLES = 280
+  const MAX_PARTICLES = 50
   const COLOURS = [
     "#69D2E7",
     "#A7DBD8",
@@ -39,7 +46,7 @@ const startVisual = containerRef => {
   })
 
   sketch.setup = function() {
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < MAX_PARTICLES; i++) {
       const x = sketch.width * 0.5 + random(-100, 100)
       const y = sketch.height * 0.5 + random(-100, 100)
       sketch.spawn(x, y)
@@ -79,10 +86,13 @@ const startVisual = containerRef => {
   }
 }
 
-const style = () => ({
+const style = ({ colors: { accent } }) => ({
   container: {
     flex: 1,
     width: "100%",
+  },
+  title: {
+    color: accent.primary,
   },
 })
 

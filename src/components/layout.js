@@ -22,6 +22,7 @@ const style = ({ colors: { back, text } }) => ({
     flexDirection: "column",
     maxWidth: "1200px",
     margin: "0 auto",
+    // fontFamily: 'Rubic',
     "& > *": {
       minHeight: "100vh",
       display: "flex",
